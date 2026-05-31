@@ -1,3 +1,8 @@
+import { Aside } from '@/Components'
+import { Fragment } from 'react'
+
 export const Home = () => (
-    <h1>Boa noite</h1>
+    <Fragment>
+        <Aside />
+    </Fragment>
 )
