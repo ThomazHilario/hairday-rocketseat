@@ -1,4 +1,5 @@
 import { Text, Title } from '@/Components'
+import { FormSheduling } from './FormScheduling'
 
 export const Aside = () => {
     return (
@@ -9,7 +10,7 @@ export const Aside = () => {
                 <Text variant="primary">Selecione data, horário e informe o nome do cliente para criar o agendamento.</Text>
            </article>
 
-
+            <FormSheduling handleOnSubmit={() => console.log(`oi`)} />
         </aside>
     )
 }
