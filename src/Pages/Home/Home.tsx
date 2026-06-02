@@ -1,3 +1,10 @@
+import { Aside, ShowAppointments } from './Components'
+import { Appointments } from './Context'
+
 export const Home = () => (
-    <h1>Boa noite</h1>
+    <Appointments>
+        <Aside />
+
+        <ShowAppointments />
+    </Appointments>
 )
