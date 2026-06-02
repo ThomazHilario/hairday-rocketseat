@@ -4,11 +4,12 @@ import { createElement, type PropsWithChildren, type ComponentProps } from "reac
 const TitleVariants = cva('text-gray-100 font-semibold', {
     variants: {
         size: {
-            xl: 'text-2xl'
+            xl: 'text-2xl',
+            lg: 'text-lg'
         },
     },
     defaultVariants: {
-        size: 'xl'
+        size: 'xl',
     }
 })
 

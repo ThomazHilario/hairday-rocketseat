@@ -1,20 +1,22 @@
-import { useForm } from "react-hook-form"
-import { Form, CalendarInput, FieldInput } from "@/Components/Form"
-
 import z from "zod"
+import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
-import { formatISO } from "date-fns"
+
+import { Form, CalendarInput, FieldInput } from "@/Components/Form"
+import { Button } from "@/Components"
+import { SchedulingHours } from "./SchedulingHours"
+import { dateTime } from "@/Utils"
+
+import { useAppointmentsContext } from "../../Context"
 
 const DEFAULT_VALUES = {
     date: new Date(),
-    hour: undefined,
-    customer: ''
 }
 
 const formShedulingSchema = z.object({
     date: z.date(),
-    hour: z.undefined() || z.number(),
-    customer: z.string()
+    hour: z.number().min(1, 'Selecione um horário!'),
+    customer: z.string().min(1, 'Preencha o campo com o nome do cliente!')
 })
 
 type FormSchedulingProps = z.infer<typeof formShedulingSchema>
@@ -26,15 +28,29 @@ export const FormSheduling = () => {
         defaultValues: DEFAULT_VALUES 
     })
 
+    const { handleSetAppointments } = useAppointmentsContext()
+
     const handleOnSubmit = (data:FormSchedulingProps) => {
-        const { date, hour } = data
-        const time = formatISO(new Date(date.getFullYear(), date.getMonth(), date.getDay(), 10).toISOString())
-        console.log(time)
+        const { date, hour, customer } = data
+
+        handleSetAppointments({
+                id: crypto.randomUUID(),
+                date: dateTime(date, hour!),
+                client: customer
+        })
+
+        form.reset({
+            customer: '',
+            date: new Date(),
+            hour: 0,
+        })
     }
 
     return (
         <Form form={form} onSubmit={handleOnSubmit} >
             <CalendarInput label="Data" name="date" id="dateinput" />
+            
+            <SchedulingHours />
 
             <FieldInput 
                 id="customerField" 
@@ -42,7 +58,9 @@ export const FormSheduling = () => {
                 name="customer" 
             />
 
-            <button className="bg-yellow font-semibold text-gray-900 p-3.5 w-full rounded-md cursor-pointer" type="submit">Agendar</button>
+            <Button variant="primary" size="md">
+                Agendar
+            </Button>
         </Form>
     )
 }

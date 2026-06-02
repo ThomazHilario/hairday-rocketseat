@@ -1,3 +1,3 @@
 export * from './Form'
-export * from './FormField'
+export * from './FieldInput'
 export * from './CalendarInput'

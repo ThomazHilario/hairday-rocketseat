@@ -1,8 +1,9 @@
-import { Fragment } from 'react'
 import { Aside } from './Components'
+import { Appointments } from './Context'
 
 export const Home = () => (
-    <Fragment>
+    
+    <Appointments>
         <Aside />
-    </Fragment>
+    </Appointments>
 )
