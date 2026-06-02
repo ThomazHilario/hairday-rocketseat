@@ -1,5 +1,6 @@
 import { Controller, useFormContext, type FieldPath, type FieldValues } from "react-hook-form"
 
+
 import "react-datepicker/dist/react-datepicker.css";
 
 import { Calendar } from "../UI";
@@ -20,7 +21,7 @@ export const CalendarInput = <TFieldValues extends FieldValues>({
     return (
         <label className="flex flex-col" htmlFor={id}>
 
-            <span className="mb-2 text-gray-200">
+            <span className="mb-2 text-gray-200 font-semibold">
                 {label}
             </span>
 
@@ -30,6 +31,7 @@ export const CalendarInput = <TFieldValues extends FieldValues>({
                 render={({ field: { onChange, onBlur, value } }) => (
                     <Calendar 
                         id={id}
+                        dateFormat='dd/MM/yyyy'
                         className="text-gray-200 w-full outline-none"
                         wrapperClassName="flex-1"
                         onChange={onChange} 

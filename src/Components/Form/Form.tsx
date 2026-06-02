@@ -11,7 +11,7 @@ export const Form = <T extends FieldValues>({ children, form, onSubmit }: FormPr
 
     return (
         <FormProvider {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)}>
+            <form className="space-y-8" onSubmit={form.handleSubmit(onSubmit)}>
                 {children}
             </form>
         </FormProvider>

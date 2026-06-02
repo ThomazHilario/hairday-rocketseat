@@ -1,5 +1,5 @@
-import { Aside } from '@/Components'
 import { Fragment } from 'react'
+import { Aside } from './Components'
 
 export const Home = () => (
     <Fragment>
