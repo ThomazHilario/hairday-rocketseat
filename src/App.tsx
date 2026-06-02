@@ -10,7 +10,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route element={<MainLayout />}>
+        <Route element={<MainLayout className="flex-col lg:flex-row" />}>
           <Route path="/" element={<Home />} />
         </Route>
       </Routes>
