@@ -1,6 +1,8 @@
 import DatePicker, { type DatePickerProps } from "react-datepicker";
 import { CustomInputCalendar } from "./CustomInputCalendar";
 
+import "react-datepicker/dist/react-datepicker.css";
+
 type CalendarProps = DatePickerProps
 
 export const Calendar = ({ customInput, ...props }: CalendarProps) => (

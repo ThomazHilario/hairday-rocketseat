@@ -1,8 +1,5 @@
 import { Controller, useFormContext, type FieldPath, type FieldValues } from "react-hook-form"
 
-
-import "react-datepicker/dist/react-datepicker.css";
-
 import { Calendar } from "../UI";
 
 type CalendarInputProps<TFieldValues extends FieldValues> = {
