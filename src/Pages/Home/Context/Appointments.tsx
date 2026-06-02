@@ -4,7 +4,8 @@ import { createContext, useContext, useState, type ReactNode } from "react";
 
 type AppointmentsContextType = {
     appointments: Appointment[];  
-    handleSetAppointments: (appoiment: Appointment) => void    
+    handleSetAppointments: (appoiment: Appointment) => void;
+    handleDeleteAppointment: (id: string) => void;
 }
 
 type AppointmentsProps = {
@@ -24,10 +25,18 @@ export const Appointments = ({ children }: AppointmentsProps) => {
         useAppoimentsStore.getState().setAppoiments(changedAppointments)
     }
 
+    const handleDeleteAppointment = (id: string) => {
+        const changedAppointments = appointments.filter(appoiment => appoiment.id !== id)
+
+        setAppointments(changedAppointments)
+        useAppoimentsStore.getState().setAppoiments(changedAppointments)
+    }
+
     return (
         <AppointmentsContext.Provider value={{
             appointments,
-            handleSetAppointments
+            handleSetAppointments,
+            handleDeleteAppointment
             
         }}>
             {children}
