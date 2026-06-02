@@ -34,9 +34,9 @@ export const FormSheduling = () => {
         const { date, hour, customer } = data
 
         handleSetAppointments({
-                id: crypto.randomUUID(),
-                date: dateTime(date, hour!),
-                client: customer
+            id: crypto.randomUUID(),
+            date: dateTime(date, hour!),
+            client: customer
         })
 
         form.reset({
