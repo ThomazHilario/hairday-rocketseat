@@ -6,6 +6,21 @@ import { useAppointmentsContext } from "../../Context"
 import { AppointmentsCard } from "../AppointmentsCard/AppointmentsCard"
 import { format, isEqual, isWithinInterval, setHours } from "date-fns"
 
+const START_AND_END_HOUR_FOR_APPOINTMENTS = {
+    morning: {
+        start: 8,
+        end: 12
+    },
+    afternoon: {
+        start: 13,
+        end: 18
+    },
+    evening: {
+        start: 19,
+        end: 21
+    }
+}
+
 export const ShowAppointments = () => {
 
     const [date, setDate] = useState<Date | null>(new Date())
@@ -16,8 +31,8 @@ export const ShowAppointments = () => {
 
     const morningAppointments = formatAppointmentsForDay.filter((appointment) => {
         const isDate = isWithinInterval(appointment.date, {
-            start: setHours(date as Date, 9),
-            end: setHours(date as Date, 12),
+            start: setHours(date as Date, START_AND_END_HOUR_FOR_APPOINTMENTS.morning.start),
+            end: setHours(date as Date, START_AND_END_HOUR_FOR_APPOINTMENTS.morning.end),
         })
 
         if(isDate) return appointment
@@ -25,8 +40,8 @@ export const ShowAppointments = () => {
 
     const afternoonAppointments = formatAppointmentsForDay.filter((appointment) => {
         const isDate = isWithinInterval(appointment.date, {
-            start: setHours(date as Date, 13),
-            end: setHours(date as Date, 18),
+            start: setHours(date as Date, START_AND_END_HOUR_FOR_APPOINTMENTS.afternoon.start),
+            end: setHours(date as Date, START_AND_END_HOUR_FOR_APPOINTMENTS.afternoon.end),
         })
 
         if(isDate) return appointment
@@ -34,8 +49,8 @@ export const ShowAppointments = () => {
 
     const eveningAppointments = formatAppointmentsForDay.filter((appointment) => {
         const isDate = isWithinInterval(appointment.date, {
-            start: setHours(date as Date, 19),
-            end: setHours(date as Date, 21),
+            start: setHours(date as Date, START_AND_END_HOUR_FOR_APPOINTMENTS.evening.start),
+            end: setHours(date as Date, START_AND_END_HOUR_FOR_APPOINTMENTS.evening.end),
         })
 
         if(isDate) return appointment
