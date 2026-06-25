@@ -1,75 +1,84 @@
-# React + TypeScript + Vite
+# Hair Day - Sistema de Agendamento
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> **Hair Day** é uma aplicação web de gerenciamento de agendamentos. durante a **Formação React da [Rocketseat](https://rocketseat.com.br/)** com foco na prática de React.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 📋 Sobre o Projeto
 
-## React Compiler
+**Hair Day** é uma aplicação web moderna e responsiva para gerenciamento de agendamentos. A aplicação foi desenvolvida usando conceitos fundamentais do **React**.
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+---
 
-Note: This will impact Vite dev & build performances.
+## ✨ Funcionalidades Principais
 
-## Expanding the ESLint configuration
+### 📅 Gerenciamento de Agendamentos
+- Criar novos agendamentos com data e hora
+- Visualizar todos os agendamentos com filtro de data.
+- Excluir agendamentos existentes
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🛠 Tecnologias
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- [React](https://react.dev/) — Construção da interface
+- [Tailwind]([https://vitejs.dev/](https://tailwindcss.com/)) — Framework de classes css
+- [Google Fonts](https://fonts.google.com/) — Tipografia
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+---
+
+## 🚀 Como Começar
+
+### Pré-requisitos
+
+Você precisará ter instalado em sua máquina:
+- **Node.js** (v16.0.0 ou superior) - [Download](https://nodejs.org/)
+- **npm** (v7.0.0 ou superior) ou **yarn**
+- **Git** - [Download](https://git-scm.com/)
+
+### Passo 1: Clone o Repositório
+
+```bash
+# HTTPS
+git clone https://github.com/ThomazHilario/hairday-rocketseat.git
+
+# Ou SSH (se configurado)
+git clone git@github.com:ThomazHilario/hairday-rocketseat.git
+
+# Entre no diretório
+cd hairday-rocketseat
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Passo 2: Instale as Dependências
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+```bash
+# Usando npm
+npm install
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+# Ou usando yarn
+yarn install
 ```
+
+### Passo 3: Inicie o Servidor de Desenvolvimento
+
+```bash
+# Usando npm
+npm run dev
+
+# Ou usando yarn
+yarn dev
+```
+
+A aplicação estará disponível em: **`http://localhost:5173`**
+
+### Passo 4: Abra no Navegador
+
+Abra seu navegador e acesse: `http://localhost:5173`
+
+---
+
+## 👨‍💻 Autor
+
+Feito por **Thomaz Hilário**
+
+[![GitHub](https://img.shields.io/badge/GitHub-ThomazHilario-181717?style=flat&logo=github)](https://github.com/ThomazHilario)
